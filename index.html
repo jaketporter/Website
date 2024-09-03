@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arduino Data</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Including the Socket.IO library for real-time communication -->
+  </head>
+  <body>
+    <h1>Arduino Sensor Data</h1>
+    <div id="data"></div>
+    <script>
+      const socket = io(); //establish a connection to the server using socket.io
+      socket.on("sensorData", (data) => {
+        // Listen for 'sensorData' events from the server
+        document.getElementById("data").innerText = data; // Update the content of the 'data' div with the received sensor data
+      });
+    </script>
+  </body>
+</html>

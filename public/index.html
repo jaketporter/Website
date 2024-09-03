@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arduino Data</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Arduino Sensor Data</h1>
+    <div id="data"></div>
+    <script>
+      const socket = io();
+      socket.on("sensorData", (data) => {
+        document.getElementById("data").innerText = data;
+      });
+    </script>
+  </body>
+</html>
