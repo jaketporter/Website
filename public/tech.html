@@ -54,7 +54,9 @@
           <div id="data"></div>
           <h2 id="sensorData"></h2>
           <p>You are on Jake's Website.</p>
-          <button class="main__btn"><a href="/">Get Started</a></button>
+          <button class="main__btn">
+            <a href="/">Get Started</a>
+          </button>
         </div>
         <div class="main__img--container">
           <img src="images/pic1.svg" alt="pic" id="main__img" />
@@ -63,9 +65,13 @@
     </div>
 
     <script>
-      const socket = io();
+      const socket = io(); //initialize a WebSocket conection using
+      //the io function from the socket.io library to allow real time comms between webpage and server
       socket.on("sensorData", (data) => {
-        document.getElementById("sensorData").innerText = data;
+        //sets up eventlistener for the sensorData event
+        //when the server provides the event the provided callback function is executed
+        document.getElementById("sensorData").innerText = data; //selects HTML element with ID
+        //sensorData and sets the text to the value of datay
       });
     </script>
 
@@ -74,13 +80,13 @@
       <h1>Embedded Software Engineer</h1>
       <div class="services__container">
         <div class="services__card">
-          <h2>Experience Bliss</h2>
-          <p>AI Powered Technology</p>
+          <h2>CV coming soon</h2>
+          <p>CV coming soon</p>
           <button>CV</button>
         </div>
         <div class="services__card">
-          <h2>Are you Ready?</h2>
-          <p>Take the leap</p>
+          <h2>CV coming soon</h2>
+          <p>CV coming soon</p>
           <button>CV</button>
         </div>
       </div>
