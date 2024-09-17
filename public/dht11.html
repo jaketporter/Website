@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--use node server.js and ngrok http 3000 in cmd prompt to run-->
+    <title>Arduino Data</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>DHT11 Weather Sensor Data</h1>
+    <div id="data"></div>
+    <script>
+      const socket = io();
+      socket.on("sensorData", (data) => {
+        document.getElementById("data").innerText = data;
+      });
+    </script>
+  </body>
+</html>
